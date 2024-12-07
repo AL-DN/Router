@@ -1,6 +1,6 @@
 # Author: Alden Sahi
 
-class packetQueue:
+class PacketQueue:
     def __init__(self):
         # packet queue
         self.packets = []

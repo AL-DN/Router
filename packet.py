@@ -1,15 +1,6 @@
 import random
 import hashlib
-import sys
-
-# We understand that creating packet data on creation will lead to inconsistent packet
-# data on event of resend
-
-# Stop and Wait: This can be solved by saving the previous packet sent just incase it needs to be resent
-# on ACK it then updates it to packet currently being sent
-
-# GoBackN: Create a list of packets in window so that in case of resend it will
-# resend packets with same data
+import time
 
 # Params:
     # packet_num: the sequence number 
@@ -20,13 +11,17 @@ class Packet:
 
     def __init__(self, packet_num):
         self.packet_num = packet_num
-        self.data = self.createRandomData()
+        self.data = self.create_random_data()
+        self.arrival_time = time.time()
+        # waits on action
+        self.dequeue_time = 0
+        self.packet_size = len(self.data)
 
         
 
 ################################################################################################
 
-    def createRandomData(self)-> str:
+    def create_random_data(self)-> str:
 
         ################ CREATES ORG DATA #############################
 

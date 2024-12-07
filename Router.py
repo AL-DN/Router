@@ -4,9 +4,9 @@
 # packets that are dropped by the router, and the overall utilization of the router.
 
 
-from packetQueue import packetQueue
+from packet_queue import PacketQueue
 
-queue = packetQueue()
+queue = PacketQueue()
 queue.enqueue(1)
 queue.enqueue(1)
 queue.enqueue(1)
