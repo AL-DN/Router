@@ -1,4 +1,4 @@
 class EventObj:
-    def __init__(self):
-        self.event_time=0
-        self.event_type=0
+    def __init__(self, event_time, event_type):
+        self.event_time= event_time
+        self.event_type= event_type

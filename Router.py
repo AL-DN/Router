@@ -5,14 +5,40 @@
 
 
 from packet_queue import PacketQueue
+from event_object import EventObj
+from event_queue import EventQueue
 
-queue = PacketQueue()
-queue.enqueue(1)
-queue.enqueue(1)
-queue.enqueue(1)
+queue = EventQueue()
+event=EventObj(event_time=1,event_type=0)
+queue.enqueue(event)
+for i in range(len(queue.events)):
+    print(queue.events[i].event_time)
+print("\n")
 
-for i in range(queue.count()):
-    print(queue.dequeue())
+event=EventObj(event_time=3,event_type=0)
+queue.enqueue(event)
+for i in range(len(queue.events)):
+    print(queue.events[i].event_time)
+print("\n")
+
+event=EventObj(event_time=7,event_type=0)
+queue.enqueue(event)
+for i in range(len(queue.events)):
+    print(queue.events[i].event_time)
+print("\n")
+
+event=EventObj(event_time=2,event_type=0)
+queue.enqueue(event)
+for i in range(len(queue.events)):
+    print(queue.events[i].event_time)
+print("\n")
+
+event=EventObj(event_time=1,event_type=0)
+queue.enqueue(event)
+for i in range(len(queue.events)):
+    print(queue.events[i].event_time)
+print("\n")
+
     
 
     
